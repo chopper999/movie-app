@@ -43,11 +43,12 @@
           cursor: pointer;
           color: $secondary-color;
           transition: color 0.3s ease;
-
-          &:hover {
-            color: lighten($secondary-color, 20%);
+          font-weight: 600;
+          @media only screen and (max-width: 600px) {
+          display: none;
           }
         }
+
       }
     }
   }

@@ -16,10 +16,10 @@ export const Header = () => {
                   <div className="item">Home</div>
                 </li>
                 <li>
-                  <div className="item">Service</div>
+                  <div className="item">Popular</div>
                 </li>
                 <li>
-                  <div className="item">Contact</div>
+                  <div className="item">My list</div>
                 </li>
               </ul>
             </nav>

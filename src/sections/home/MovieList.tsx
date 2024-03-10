@@ -1,7 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import fetcher from "../../utils/fetcher";
 import "./../../scss/movie-list.scss";
-import { Loader } from "../../components/Loader";
 import { MovieCard } from "../../components/MovieCard";
 import Pagination from "../../components/Pagination";
 import { toast } from "react-toastify";
@@ -23,7 +22,7 @@ export const MovieList = ({ content }: { content: string }) => {
         setTotalPage(result.total_pages);
         scrollToTopContent();
       },
-      (error: any) => {
+      (error: string | undefined) => {
         toast.error(error);
         setIsProcessing(false);
       }
