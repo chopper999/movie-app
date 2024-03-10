@@ -1,0 +1,94 @@
+import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
+import { m } from "framer-motion";
+import Logo from "./Logo";
+// @mui
+
+// ----------------------------------------------------------------------
+
+export default function SplashScreen({ ...other }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  return (
+    <div
+      style={{
+        right: 0,
+        width: 1,
+        bottom: 0,
+        height: 1,
+        zIndex: 9998,
+        display: "flex",
+        position: "absolute",
+        alignItems: "center",
+        justifyContent: "center",
+        // bgcolor: '',
+      }}
+      {...other}
+    >
+      <>
+        <m.div
+          animate={{
+            scale: [1, 0.9, 0.9, 1, 1],
+            opacity: [1, 0.48, 0.48, 1, 1],
+          }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+            repeatDelay: 1,
+            repeat: Infinity,
+          }}
+        >
+          <Logo disabledLink />
+        </m.div>
+
+        <m.div
+          animate={{
+            scale: [1.6, 1, 1, 1.6, 1.6],
+            rotate: [270, 0, 0, 270, 270],
+            opacity: [0.25, 1, 1, 1, 0.25],
+            borderRadius: ["25%", "25%", "50%", "50%", "25%"],
+          }}
+          transition={{ ease: "linear", duration: 3.2, repeat: Infinity }}
+          style={{
+            width: 100,
+            height: 100,
+            position: "absolute",
+            // border: (theme) => `solid 3px ${alpha(theme.palette.primary.dark, 0.24)}`,
+          }}
+        />
+
+        <m.div
+          animate={{
+            scale: [1, 1.2, 1.2, 1, 1],
+            rotate: [0, 270, 270, 0, 0],
+            opacity: [1, 0.25, 0.25, 0.25, 1],
+            borderRadius: ["25%", "25%", "50%", "50%", "25%"],
+          }}
+          transition={{
+            ease: "linear",
+            duration: 3.2,
+            repeat: Infinity,
+          }}
+          style={{
+            width: 120,
+            height: 120,
+            position: "absolute",
+            // border: (theme) => `solid 8px ${alpha(theme.palette.primary.dark, 0.24)}`,
+          }}
+        />
+      </>
+    </div>
+  );
+}
+
+SplashScreen.propTypes = {
+  sx: PropTypes.object,
+};

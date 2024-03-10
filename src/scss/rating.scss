@@ -1,0 +1,10 @@
+@import './color.scss';
+
+.rating-container{
+    .icon-rating{
+        color: rgba($color: $main-color, $alpha: 0.4);
+        &.active{
+            color: $main-color;
+        }
+    }
+}

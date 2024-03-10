@@ -1,0 +1,45 @@
+@import './color.scss';
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon-pagination{
+        cursor: pointer;
+        border: 1px solid #333;
+        border-radius: 50%;
+        color: #333;
+        margin-inline: 5px;
+        @media only screen and (max-width: 450px) {
+            width: 20px;
+            height: 20px;
+        }
+    }
+    .disable{
+        color: $disable-color;
+        border: 1px solid $disable-color;
+        cursor: no-drop;
+    }
+    .page{
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        color: #333;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #333;
+        margin-inline: 5px;
+        @media only screen and (max-width: 450px) {
+            width: 20px;
+            height: 20px;
+            font-size: .6rem;
+        }
+    }
+    .active{
+        background-color: rgba($color: $bg-color, $alpha: 0.1);
+        border: 1px solid $bg-color;
+        color: $bg-color;
+    }
+}

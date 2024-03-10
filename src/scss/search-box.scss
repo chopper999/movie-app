@@ -1,0 +1,32 @@
+@import './color.scss';
+
+// Styles
+.search-box {
+    position: relative;
+  display: flex;
+  align-items: center;
+
+  .search-input {
+    position: relative;
+    padding: 8px;
+    border: 1px solid $primary-color;
+    border-radius: 8px;
+    margin-right: 8px;
+    width: 200px;
+
+    &::placeholder {
+      color: $primary-color;
+    }
+  }
+  .icon-search{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 10px;
+    color: $primary-color;
+    &.active{
+      cursor: pointer;
+    }
+  }
+}

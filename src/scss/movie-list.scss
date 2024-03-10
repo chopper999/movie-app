@@ -1,0 +1,19 @@
+@import './color.scss';
+.movie-list-container{
+    margin-block: 20px;
+    display: flex;
+    justify-content: center;
+    .movie-list{
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+        @media only screen and (max-width: 1200px) {
+            grid-template-columns: auto auto auto auto;
+        }
+        @media only screen and (max-width: 900px) {
+            grid-template-columns: auto auto auto;
+        }
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: auto;
+        }
+    }
+}

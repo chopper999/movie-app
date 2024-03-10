@@ -1,0 +1,54 @@
+@import './color.scss';
+
+// Mixins
+@mixin container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// Styles
+.header {
+  background-color: $header-color;
+  color: $secondary-color;
+  padding: 20px 0;
+
+  .container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    margin: 0;
+    font-size: 24px;
+  }
+
+  .logo-nav{
+    display: flex;
+    align-items: center;
+  }
+  .nav {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        display: inline-block;
+        margin-left: 20px;
+
+        .item {
+          cursor: pointer;
+          color: $secondary-color;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: lighten($secondary-color, 20%);
+          }
+        }
+      }
+    }
+  }
+}
